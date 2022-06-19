@@ -28,20 +28,25 @@
 %% Generate synthetic data
 clear;clc;close all;
 
-w=str_ricker(30,0.001,0.1);
-t=zeros(300,1000);
-sigma=300;A=100;B=200;
-for i=1:size(t,2)
-k=floor(-A*exp(-(i-size(t,2)/2).^2/sigma.^2)+B);
-if k>0&&k<=size(t,1)
-    t(k,i)=1;
-end
-end
-for i=1:size(t,2)
-data(:,i)=conv(t(:,i),w);
-end
-data=data(:,1:10:end);
-data=data./max(max(data));
+% w=str_ricker(30,0.001,0.1);
+% t=zeros(300,1000);
+% sigma=300;A=100;B=200;
+% for i=1:size(t,2)
+% k=floor(-A*exp(-(i-size(t,2)/2).^2/sigma.^2)+B);
+% if k>0&&k<=size(t,1)
+%     t(k,i)=1;
+% end
+% end
+% for i=1:size(t,2)
+% data(:,i)=conv(t(:,i),w);
+% end
+% data=data(:,1:10:end);
+% data=data./max(max(data));
+
+% read legacy_originalTrace.dat into data and transpose
+data = load('legacy_originalTrace.dat');
+data = data';
+
 scnoi=(rand(size(data))*2-1)*0.2;
 dn=data+scnoi;
 
