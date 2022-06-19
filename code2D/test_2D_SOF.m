@@ -148,3 +148,6 @@ snr1=str_snr(data,d1);
 snrc=str_snr(data,dtemp);
 
 
+% write dip to excel file
+xlswrite('dip.xlsx',dip);
+
