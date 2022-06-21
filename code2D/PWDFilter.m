@@ -20,5 +20,5 @@ ylabel('Time (ms)','FontName','Arial','FontWeight','Bold','FontSize',14);
 set(gca,'FontName','Arial','FontSize',14,'LineWidth',1);
 title('PWD Filtered');
 
-xlswrite('PWDF.xlsx',dip);
+xlswrite('PWDF.xlsx',dataF);
 

@@ -6,16 +6,16 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 
 path = 'PWD/'
-model = 'SLMO'
-# model = 'ladder'
+# model = 'SLMO'
+model = 'ladder'
 
 dipFile = path+'dip_'+model+'.dat'
-orgFile = path+'legacy_originalTrace_'+model+'.dat'
+orgFile = path+'org_'+model+'.dat'
 
 
 dip = (np.loadtxt(dipFile))
 print(dip.shape)
-sec = (np.transpose(np.loadtxt(orgFile)))
+sec = ((np.loadtxt(orgFile)))
 print(sec.shape)
 
 plt.subplot(1, 3, 1)
