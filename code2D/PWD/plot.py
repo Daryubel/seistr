@@ -5,27 +5,36 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 
+path = 'PWD/'
 model = 'SLMO'
 # model = 'ladder'
 
-dipFile = 'dip_'+model+'.dat'
-orgFile = 'legacy_originalTrace_'+model+'.dat'
+dipFile = path+'dip_'+model+'.dat'
+orgFile = path+'legacy_originalTrace_'+model+'.dat'
 
 
-dip = np.transpose(np.transpose(np.loadtxt(dipFile)))
-sec = np.transpose(np.transpose(np.loadtxt(orgFile)))
-secTemp = sec
+dip = (np.loadtxt(dipFile))
+print(dip.shape)
+sec = (np.transpose(np.loadtxt(orgFile)))
+print(sec.shape)
 
-
-for i in range(np.size(dip, 0)):
-    for j in range(np.size(dip, 1)):
-        if dip[i, j] < 1:
-            secTemp[i, j] = 0
-
-# plot original trace and secTemp trace
-plt.subplot(1, 2, 1)
+plt.subplot(1, 3, 1)
 plt.imshow(sec, cmap=cm.gray)
 plt.title("Original Trace")
-plt.subplot(1, 2, 2)
-plt.imshow(secTemp, cmap=cm.gray)
+
+
+threshold = 1
+for i in range(len(dip[0])):
+    for j in range(len(dip[1])):
+        if dip[i][j] < threshold:
+            sec[i][j] = 0
+
+
+# plot original trace and secTemp trace
+plt.subplot(1, 3, 2)
+plt.imshow(dip, cmap=cm.gray)
+plt.title("Dip")
+plt.subplot(1, 3, 3)
+plt.imshow(sec, cmap=cm.gray)
 plt.title("Trace with PWD")
+plt.show()
