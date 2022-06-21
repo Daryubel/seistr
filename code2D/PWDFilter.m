@@ -1,4 +1,4 @@
-% test_2D_SOF;
+test_2D_SOF;
 
 dataF = data;
 
