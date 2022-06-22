@@ -37,7 +37,7 @@ for i in range(len(dip[0])):
 
 # plot original trace and secTemp trace
 plt.subplot(1, 3, 2)
-plt.imshow(dip, cmap=cm.afmhot)
+plt.imshow(dip, cmap=cm.seismic)
 # plt.title("Dip")
 plt.xlabel('Trace Number')
 plt.ylabel('Time')
@@ -49,7 +49,7 @@ plt.ylabel('Time')
 plt.savefig(path+'PWD_'+model+'.png', dpi=600)
 
 plt.figure(2)
-plt.imshow(sec, cmap=cm.gray)
+plt.imshow(sec, cmap=cm.gray, aspect='auto')
 # plt.title("Trace with PWD")
 plt.xlabel('Trace Number')
 plt.ylabel('Time')
