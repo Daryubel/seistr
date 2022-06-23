@@ -45,7 +45,7 @@ clear;clc;close all;
 
 % read legacy_originalTrace.dat into data and transpose
 % data = load('legacy_originalTrace_ladder.dat');
-data = load('legacy_originalTrace_SLMO.dat');
+data = load('legacy_originalTrace_ladder.dat');
 data = data';
 
 scnoi=(rand(size(data))*2-1)*0.2;
