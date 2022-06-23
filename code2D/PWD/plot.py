@@ -8,8 +8,8 @@ import matplotlib.cm as cm
 plt.rc('font', family='Times New Roman', size=14)
 
 path = 'PWD/'
-# model = 'SLMO'
-model = 'ladder'
+model = 'SLMO'
+# model = 'ladder'
 
 dipFile = path+'dip_'+model+'.dat'
 orgFile = path+'org_'+model+'.dat'
@@ -29,11 +29,11 @@ plt.ylabel('Time (ns)')
 # plt.colorbar().set_label(r'$E_z \quad (V/m)$')
 
 
-threshold = 1
-for i in range(len(dip[0])):
-    for j in range(len(dip[1])):
-        if dip[i][j] < threshold:
-            sec[i][j] = 0
+threshold = 0.2
+for i in range(len(dip)):
+    for j in range(len(dip[0])):
+        if np.abs(dip[i][j]) < threshold:
+            sec[i][j] = sec[i][j] * 0
 
 
 # plot original trace and secTemp trace
