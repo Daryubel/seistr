@@ -8,7 +8,8 @@ import matplotlib.cm as cm
 plt.rc('font', family='Times New Roman', size=14)
 
 path = 'PWD/'
-model = 'SLMO'
+# model = 'SLMO'
+model = 'DAT0003'
 # model = 'ladder'
 
 dipFile = path+'dip_'+model+'.dat'

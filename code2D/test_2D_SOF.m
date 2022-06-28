@@ -44,7 +44,8 @@ clear;clc;close all;
 % data=data./max(max(data));
 
 % read legacy_originalTrace.dat into data and transpose
-data = load('legacy_originalTrace_SLMO.dat');
+% data = load('legacy_originalTrace_SLMO.dat');
+data = load('legacy_originalTrace_DAT0003.dat');
 % data = load('legacy_originalTrace_ladder.dat');
 data = data';
 
