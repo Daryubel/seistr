@@ -12,7 +12,8 @@ path = 'PWD/'
 # model = 'DAT0003'
 # model = 'ladder'
 # model = 'SLMO_ROUGH'
-model = 'SLOL'
+# model = 'SLOL'
+model = 'SLOL_NL'
 
 dipFile = path+'dip_'+model+'.dat'
 orgFile = path+'org_'+model+'.dat'
@@ -20,7 +21,7 @@ orgFile = path+'org_'+model+'.dat'
 
 dip = (np.loadtxt(dipFile))
 print(dip.shape)
-sec = (np.transpose(np.loadtxt(orgFile)))
+sec = ((np.loadtxt(orgFile)))
 print(sec.shape)
 
 # abort if the two files are not the same size
@@ -37,7 +38,7 @@ plt.ylabel('Time (ns)')
 # plt.colorbar().set_label(r'$E_z \quad (V/m)$')
 
 
-threshold = 0.7
+threshold = 0.5
 for i in range(len(dip)):
     for j in range(len(dip[0])):
         if np.abs(dip[i][j]) < threshold:
