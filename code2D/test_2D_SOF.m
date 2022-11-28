@@ -49,8 +49,9 @@ clear;clc;close all;
 % data = load('legacy_originalTrace_ladder.dat');
 % data = load('legacy_originalTrace_SLMO_ROUGH.dat');
 % data = load('legacy_originalTrace_SLOL.dat');
-data = load("legacy_originalTrace_SLOL_NL.dat");
-% data = data';
+% data = load("legacy_originalTrace_SLOL_NL.dat");
+data = load('legacy_originalTrace_SLOLLarge_NL.dat');
+data = data';
 
 scnoi=(rand(size(data))*2-1)*0.2;
 % dn=data+scnoi;

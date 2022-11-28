@@ -13,7 +13,8 @@ path = 'PWD/'
 # model = 'ladder'
 # model = 'SLMO_ROUGH'
 # model = 'SLOL'
-model = 'SLOL_NL'
+# model = 'SLOL_NL'
+model = 'SLOLargeNL'
 
 dipFile = path+'dip_'+model+'.dat'
 orgFile = path+'org_'+model+'.dat'
@@ -21,7 +22,7 @@ orgFile = path+'org_'+model+'.dat'
 
 dip = (np.loadtxt(dipFile))
 print(dip.shape)
-sec = ((np.loadtxt(orgFile)))
+sec = np.transpose((np.loadtxt(orgFile)))
 print(sec.shape)
 
 # abort if the two files are not the same size
@@ -38,11 +39,11 @@ plt.ylabel('Time (ns)')
 # plt.colorbar().set_label(r'$E_z \quad (V/m)$')
 
 
-threshold = 0.5
+threshold = 1.2
 for i in range(len(dip)):
     for j in range(len(dip[0])):
         if np.abs(dip[i][j]) < threshold:
-            sec[i][j] = sec[i][j] * 0
+            sec[i][j] = sec[i][j] * (0 * 10**(-3))
 
 
 # plot original trace and secTemp trace
