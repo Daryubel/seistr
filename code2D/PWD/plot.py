@@ -8,17 +8,18 @@ plt.rc('font', family='Times New Roman', size=14)
 path = 'PWD/'
 # model = 'SLOL'
 # model = 'ladder'
-model = 'ladderLarge'
+# model = 'ladderLarge'
+model = 'QLDA'
 
 dipFile = path+model+'_dip.dat'
 pwdFile = path+model+'_PWD.dat'
 orgFile = path+model+'_org.dat'
 
-dip = (np.loadtxt(dipFile))
-print(dip.shape)
+# dip = (np.loadtxt(dipFile))
+# print(dip.shape)
 pwd = (np.loadtxt(pwdFile))
 print(pwd.shape)
-org = (np.loadtxt(orgFile))
+# org = (np.loadtxt(orgFile))
 
 # # Get the jet colormap
 # cmap = plt.cm.jet
@@ -46,30 +47,30 @@ ax.spines['left'].set_linewidth(2)
 ax.spines['bottom'].set_linewidth(2)
 plt.savefig(path+'r1_PWD_'+model+'_sec.png', dpi=600)
 
-plt.figure(2)
-plt.imshow(dip, cmap=cm.jet, aspect='auto')
-# plt.title("Dip")
-plt.xlabel('Trace Number')
-plt.ylabel('Time (ns)')
-plt.colorbar().set_label('Dip (Rad)')
-ax = plt.gca()
-ax.spines['right'].set_linewidth(2)
-ax.spines['top'].set_linewidth(2)
-ax.spines['left'].set_linewidth(2)
-ax.spines['bottom'].set_linewidth(2)
-plt.savefig(path+'r1_PWD_'+model+'_dip.png', dpi=600)
+# plt.figure(2)
+# plt.imshow(dip, cmap=cm.jet, aspect='auto')
+# # plt.title("Dip")
+# plt.xlabel('Trace Number')
+# plt.ylabel('Time (ns)')
+# plt.colorbar().set_label('Dip (Rad)')
+# ax = plt.gca()
+# ax.spines['right'].set_linewidth(2)
+# ax.spines['top'].set_linewidth(2)
+# ax.spines['left'].set_linewidth(2)
+# ax.spines['bottom'].set_linewidth(2)
+# plt.savefig(path+'r1_PWD_'+model+'_dip.png', dpi=600)
 
-plt.figure(3)
-plt.imshow(org, cmap=cm.gray, aspect='auto')
-# plt.title("Original Trace")
-plt.xlabel('Trace Number')
-plt.ylabel('Time (ns)')
-plt.colorbar().set_label(r'$E_z \quad (V/m)$')
-ax = plt.gca()
-ax.spines['right'].set_linewidth(2)
-ax.spines['top'].set_linewidth(2)
-ax.spines['left'].set_linewidth(2)
-ax.spines['bottom'].set_linewidth(2)
-# plt.savefig(path+'r1_PWD_'+model+'_org.png', dpi=600)
+# plt.figure(3)
+# plt.imshow(org, cmap=cm.gray, aspect='auto')
+# # plt.title("Original Trace")
+# plt.xlabel('Trace Number')
+# plt.ylabel('Time (ns)')
+# plt.colorbar().set_label(r'$E_z \quad (V/m)$')
+# ax = plt.gca()
+# ax.spines['right'].set_linewidth(2)
+# ax.spines['top'].set_linewidth(2)
+# ax.spines['left'].set_linewidth(2)
+# ax.spines['bottom'].set_linewidth(2)
+# # plt.savefig(path+'r1_PWD_'+model+'_org.png', dpi=600)
 
 plt.show()
